@@ -8,7 +8,9 @@ function NewAssetForm() {
   };
 
   const handleUpdate = (event) => {
-    setForm({ [event.target.name]: event.target.value });
+    setForm((prevState) => {
+      return { ...prevState, [event.target.name]: event.target.value };
+    });
   };
 
   return (
